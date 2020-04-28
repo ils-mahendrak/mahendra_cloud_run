@@ -3,7 +3,7 @@ const app = express();
 const { google } = require('googleapis');
 const {SecretManagerServiceClient} = require('@google-cloud/secret-manager');
 const client = new SecretManagerServiceClient();
-const name = await getSecretName('projects/626923387764/secrets/testcred');
+const name = getSecretName('projects/626923387764/secrets/testcred');
 
 const auth = new google.auth.GoogleAuth({});
 
