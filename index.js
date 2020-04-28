@@ -5,7 +5,7 @@ const {SecretManagerServiceClient} = require('@google-cloud/secret-manager');
 //const {GoogleAuth} = require('google-auth-library')
 const client = new SecretManagerServiceClient ()
 
-client.accessSecretVersion('projects/626923387764/secrets/testcred/versions/latest')
+client.accessSecretVersion('projects/626923387764/secrets/testcred')
 .then(data=>{
     console.log(data)
 })
