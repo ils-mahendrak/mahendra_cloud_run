@@ -66,7 +66,6 @@ client.accessSecretVersion('projects/626923387764/secrets/testcred/versions/late
 app.get('/', (req, res) => {
   console.log('Hello world newreceived a request.');
   
-  console.log(test);
   const target = process.env.TARGET || 'World test1';
    console.log()
   res.send(`Hello dstestwew}!`);
