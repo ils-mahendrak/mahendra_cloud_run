@@ -111,6 +111,7 @@ async function createAndAccessSecret() {
 
   // console.info(`Added secret version ${version.name}`);
   const name = 'projects/626923387764/secrets/testcred';
+  const versionname = 'projects/626923387764/secrets/testcred/versions/latest';
   // Access the secret.
   const [secret] = await client.getSecret({
     name: name,
@@ -118,9 +119,20 @@ async function createAndAccessSecret() {
   const policy = secret.replication.replication;
 
   console.info(`Found secret ${secret.name} (${policy})`);
-  const payload = JSON.stringify(secret.labels);
+  const labels = JSON.stringify(secret.labels);
+  console.info(labels);
+  const payload = JSON.stringify(secret.payload);
 	console.info(payload);
  
+  const [version] = await client.accessSecretVersion({
+    name: versionname,
+  });
+  const payload1 = version.payload.data.toString('utf8');
+
+  // WARNING: Do not print the secret in a production environment - this
+  // snippet is showing how to access the secret material.
+  console.info(`Payload: ${payload1}`);
+
 }
 createAndAccessSecret();
 
