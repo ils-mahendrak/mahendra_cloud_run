@@ -121,8 +121,7 @@ async function createAndAccessSecret() {
   console.info(`Found secret ${secret.name} (${policy})`);
   const labels = JSON.stringify(secret.labels);
   console.info(labels);
-  const payload = JSON.stringify(secret.payload);
-	console.info(payload);
+ 
  
   const [version] = await client.accessSecretVersion({
     name: versionname,
