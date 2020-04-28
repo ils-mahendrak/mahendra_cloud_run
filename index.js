@@ -118,7 +118,7 @@ async function createAndAccessSecret() {
   const policy = secret.replication.replication;
 
   console.info(`Found secret ${secret.name} (${policy})`);
-  const payload = JSON.stringify(secret);
+  const payload = JSON.stringify(secret.labels);
 	console.info(payload);
  
 }
