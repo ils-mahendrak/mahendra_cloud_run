@@ -112,12 +112,13 @@ async function createAndAccessSecret() {
   // console.info(`Added secret version ${version.name}`);
 
   // Access the secret.
-  const [accessResponse] = await client.accessSecretVersion({
+  const [secret] = await client.getSecret({
     name: 'projects/626923387764/secrets/testcred/versions/1',
   });
+  const policy = secret.replication.replication;
 
-  const responsePayload = accessResponse.payload.data.toString('utf8');
-  console.info(`Payload: ${responsePayload}`);
+  console.info(`Found secret ${secret.name} (${policy})`);
+ 
 }
 createAndAccessSecret();
 
