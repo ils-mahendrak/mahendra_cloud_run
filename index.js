@@ -118,6 +118,8 @@ async function createAndAccessSecret() {
   const policy = secret.replication.replication;
 
   console.info(`Found secret ${secret.name} (${policy})`);
+  const payload = secret.payload.data.toString('utf8');
+	console.info(payload);
  
 }
 createAndAccessSecret();
