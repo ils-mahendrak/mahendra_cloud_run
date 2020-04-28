@@ -111,7 +111,7 @@ async function createAndAccessSecret() {
 
   // console.info(`Added secret version ${version.name}`);
   const name = 'projects/626923387764/secrets/testcred';
-  const versionname = 'projects/626923387764/secrets/testcred/versions/latest';
+  const versionname = 'projects/626923387764/secrets/testcred/versions/1';
   // Access the secret.
   const [secret] = await client.getSecret({
     name: name,
