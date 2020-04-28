@@ -110,10 +110,10 @@ async function createAndAccessSecret() {
   // });
 
   // console.info(`Added secret version ${version.name}`);
-
+  const name = 'projects/626923387764/secrets/testcred';
   // Access the secret.
   const [secret] = await client.getSecret({
-    name: 'projects/626923387764/secrets/testcred/versions/1',
+    name: name,
   });
   const policy = secret.replication.replication;
 
