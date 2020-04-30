@@ -39,9 +39,9 @@ var sql_conn = mysql.createPool({
    database: config.dbname,
    ssl:
    {
-      ca: payload3,
-      key: payload2,
-      cert: payload1,
+    ca: fs.readFileSync('./src/config/ssl/server-ca.pem'),
+    key: fs.readFileSync('./src/config/ssl/client-key.pem'),
+    cert: fs.readFileSync('./src/config/ssl/client-cert.pem'),
    },
    multipleStatements: true
 });
