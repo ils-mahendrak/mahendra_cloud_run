@@ -1,0 +1,81 @@
+# steps:
+
+# #######################################################
+# # Build the container image
+# # update the gcr.io/[project-id]/[build-image-name]
+# #######################################################
+
+# - name: 'gcr.io/cloud-builders/docker'
+#   args: ['build', '-t', 'gcr.io/mad-chef-141/dev-api', '.']
+
+# #######################################################
+# # Push the container image to Container Registry
+# # update the gcr.io/[project-id]/[build-image-name]
+# #######################################################
+
+# - name: 'gcr.io/cloud-builders/docker'
+#   args: ['push', 'gcr.io/mad-chef-141/dev-api']
+  
+# #######################################################
+# # Deploy container image to Cloud Run
+# # update the gcr.io/[project-id]/[build-image-name]
+# # update RUN-SERVICE-NAME
+# # update PORT. Ensure match with Apache Conf.
+# # update REGION
+# # update SERVICE ACCOUNT depending on ENVIRONMENT
+# # update REGION
+# # update ALLOW-UNAUTHENTICATED if NON-PUBLIC URL
+# # update MAX-INSTANCES if needed
+# # update TIMEOUT if needed
+# # update CLOUD SQL INSTANCE NAME
+# #######################################################
+
+# - name: 'gcr.io/cloud-builders/gcloud'
+#   args:
+#   - 'run'
+#   - 'deploy'
+#   - 'syn-madchef-144-api-dev'
+#   - '--image'
+#   - 'gcr.io/mad-chef-141/dev-api'
+#   - '--port'
+#   - '4000'
+#   - '--region'
+#   - 'us-east4'
+#   - '--platform'
+#   - 'managed'
+#   - '--allow-unauthenticated'
+#   - '--service-account'
+#   - 'sa-mad-chef-141-dev@mad-chef-141.iam.gserviceaccount.com'
+#   - '--max-instances'
+#   - '5'
+#   - '--timeout'
+#   - '60'
+#   - '--add-cloudsql-instances'
+#   - 'mad-chef-141:us-east4:syn-madchef-141-db-dev'
+#   - '--set-env-vars'
+#   - 'DB_USER=madchef_devdb_user,
+#      DB_PASS=qS9Qy0JUiyfX18Za,
+#      DB_HOST=35.188.242.10,
+#      DB_SSL_KEY=secret:mad-chef-141/ssl-key-dev-client-key, 
+#      DB_SSL_CERT=secret:projects/240998304781/secrets/ssl-key-dev-client-cert, 
+#      DB_SSL_CA=secret:projects/240998304781/secrets/ssl-key-dev-server-ca, 
+#      DB_NAME=madchef_dev_db,
+#      BASE_URL=syn-madchef-144-api-dev-vpz4v4zp5a-uk.a.run.app,
+#      SWAGGER_ORIGIN=https://syn-madchef-144-api-dev-vpz4v4zp5a-uk.a.run.app,
+#      CLOUD_SQL_CONNECTION_NAME=mad-chef-141:us-east4-a:us-east4:syn-madchef-141-db-dev,
+#      LOGLEVEL=7,
+#      JWT_KEY=private_key,
+#      PROJECT_ID = mad-chef-141,
+#      BUCKET_NAME = syn-madchef-141-bucket-dev,
+#      STORAGE_DESTINATION = https://storage.googleapis.com/,
+#      RESET_LINK = '
+
+
+# # 'DB_USER = madchef_devdb_user, DB_PASS = qS9Qy0JUiyfX18Za, DB_NAME = madchef_dev_db, CLOUD_SQL_CONNECTION_NAME = mad-chef-141:us-east4-a:us-east4:syn-madchef-141-db-dev'
+
+# #######################################################
+# # update image name. This is what is pushed in GCR
+# #######################################################
+
+# images:
+# - gcr.io/mad-chef-141/dev-api
