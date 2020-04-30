@@ -6,7 +6,7 @@ steps:
 #######################################################
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/mad-chef-141/dev-api', '.']
+  args: ['build', '-t', 'gcr.io/erudite-host-273015/mahendra_cloud_run', '.']
 
 #######################################################
 # Push the container image to Container Registry
@@ -14,7 +14,7 @@ steps:
 #######################################################
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/mad-chef-141/dev-api']
+  args: ['push', 'gcr.io/erudite-host-273015/mahendra_cloud_run']
   
 #######################################################
 # Deploy container image to Cloud Run
