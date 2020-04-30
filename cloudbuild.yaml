@@ -34,7 +34,7 @@
 #   args:
 #   - 'run'
 #   - 'deploy'
-#   - 'syn-madchef-144-api-dev'
+#   - 'syn-madchef-141-api-dev'
 #   - '--image'
 #   - 'gcr.io/mad-chef-141/dev-api'
 #   - '--port'
@@ -60,8 +60,8 @@
 #      DB_SSL_CERT=secret:projects/240998304781/secrets/ssl-key-dev-client-cert, 
 #      DB_SSL_CA=secret:projects/240998304781/secrets/ssl-key-dev-server-ca, 
 #      DB_NAME=madchef_dev_db,
-#      BASE_URL=syn-madchef-144-api-dev-vpz4v4zp5a-uk.a.run.app,
-#      SWAGGER_ORIGIN=https://syn-madchef-144-api-dev-vpz4v4zp5a-uk.a.run.app,
+#      BASE_URL=syn-madchef-141-api-dev-vpz4v4zp5a-uk.a.run.app,
+#      SWAGGER_ORIGIN=https://syn-madchef-141-api-dev-vpz4v4zp5a-uk.a.run.app,
 #      CLOUD_SQL_CONNECTION_NAME=mad-chef-141:us-east4-a:us-east4:syn-madchef-141-db-dev,
 #      LOGLEVEL=7,
 #      JWT_KEY=private_key,
